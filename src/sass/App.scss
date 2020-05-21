@@ -129,6 +129,18 @@ h6,
   }
 }
 
+// Header
+.header {
+  background: $color-primary;
+  color: white;
+  padding: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 // Hero 
 .hero {
   position: relative;
