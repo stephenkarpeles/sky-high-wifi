@@ -8,6 +8,13 @@ function Header() {
         <div className="header__logo">
           <img src={Logo}/>
         </div>
+        <div className="header__menu">
+          <nav>
+            <ul>
+              <li><a className="btn btn--header btn--medium" href="/">Get Started</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   )
