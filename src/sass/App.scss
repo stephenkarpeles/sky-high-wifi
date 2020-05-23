@@ -99,10 +99,6 @@ body {
   @include mq(ipad, 'max-width') {
     font-size: 90%;
   }
-
-  @include mq(tablet, 'max-width') {
-    font-size: 80%;
-  }
 }
 
 img {
@@ -373,6 +369,7 @@ h6,
 
   @include mq(ipad, 'max-width') {
     padding: 80px 0;
+    background: url('../images/home-small.jpg');
   }
 
   &:after {

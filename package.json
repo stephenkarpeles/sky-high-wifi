@@ -1,5 +1,6 @@
 {
   "name": "sky-high-wifi",
+  "homepage": "http://skyhighwifi.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
