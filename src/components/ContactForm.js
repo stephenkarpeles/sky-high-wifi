@@ -32,6 +32,19 @@ function ContactForm() {
           required: false
         }
       ]}
+
+      messages = {
+        {
+          sending: "Sending...",
+          success: "Thanks for your message, we'll contact you shortly!",
+          error: "An unexpected internal error has occurred.",
+          empty: "You must write an e-mail.",
+          duplicate: "Too many subscribe attempts for this email address",
+          button: "Send!"
+        }
+      }
+      // Add a personalized class
+      className='contact-form'
     />
   )
 }

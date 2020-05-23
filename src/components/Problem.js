@@ -11,7 +11,7 @@ function Problem() {
               <h1>Tired of slow WiFi speeds?</h1>  
               <p>Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things.</p> 
               <p>Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things.</p> 
-              <a className="btn btn--secondary btn--large" href="/">Get Started</a>
+              <a className="btn btn--secondary btn--large btn--problem" href="/">Get Started</a>
             </div>
           </div>
           <div className="col col-2-5">

@@ -6,14 +6,63 @@ $color-light-blue: #3BABD9;
 $color-mid-blue: #3D87E3;
 $color-dark-blue: #1C2E80;
 
-$h1-size: 3.815rem;
-$h2-size: 3.052rem;
-$h3-size: 2.441rem;
-$h4-size: 1.953rem;
-$h5-size: 1.563rem;
-$h6-size: 1.25rem;
+$h1-size: 3.815em;
+$h2-size: 3.052em;
+$h3-size: 2.441em;
+$h4-size: 1.953em;
+$h5-size: 1.563em;
+$h6-size: 1.25em;
 
 $gutter: 20px;
+
+// Responsive Breakpoints
+$breakpoints: (
+  mobile-portrait: 320px,
+  mobile-landscape: 480px,
+  tablet: 640px,
+  full-nav: 700px,
+  ipad: 768px,
+  wp-bar-switch: 783px,
+  desktop-narrow: 860px,
+  desktop: 1024px,
+  container-max: 1100px,
+  large: 1260px
+);
+
+@mixin mq($breakpoint, $rule:min-width) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $rule == 'max-width' {
+    $value: $value - 1;
+  }
+
+  @if $value != null {
+    @media screen and ($rule: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin mq-max($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint) - 1;
+
+  @if $value != null {
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin mq-range($breakpoint1, $breakpoint2) {
+  $min-value: map-get($breakpoints, $breakpoint1);
+  $max-value: map-get($breakpoints, $breakpoint2) - 1;
+
+  @if $min-value != null and $max-value != null {
+    @media screen and (min-width: $min-value) and (max-width: $max-value) {
+      @content;
+    }
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App {
@@ -38,13 +87,22 @@ body {
 }
 
 body {
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 1.375;
 }
 
 .App {
   font-family: 'Roboto', sans-serif;
   line-height: 1.375;
+  font-size: 100%;
+
+  @include mq(ipad, 'max-width') {
+    font-size: 90%;
+  }
+
+  @include mq(tablet, 'max-width') {
+    font-size: 80%;
+  }
 }
 
 img {
@@ -92,18 +150,30 @@ h1,
 .h1-size {
   font-size: $h1-size;
   line-height: 1.15;
+
+  @include mq(ipad, 'max-width') {
+    line-height: 1.1;
+  }
 }
 
 h2,
 .h2-size {
   font-size: $h2-size;
   line-height: 1.25;
+
+  @include mq(ipad, 'max-width') {
+    line-height: 1.1;
+  }
 }
 
 h3,
 .h3-size {
   font-size: $h3-size;
   line-height: 1.2;
+
+  @include mq(ipad, 'max-width') {
+    line-height: 1.1;
+  }
 }
 
 h4,
@@ -116,6 +186,10 @@ h5,
 .h5-size {
   font-size: $h5-size;
   line-height: 1.2;
+
+  @include mq(ipad, 'max-width') {
+    line-height: 1.225;
+  }
 }
 
 h6,
@@ -137,12 +211,12 @@ h6,
   }
 
   &--medium {
-    font-size: 1.05rem;
+    font-size: 1.05em;
     padding: 8px 16px;
   }
 
   &--large {
-    font-size: 1.25rem;
+    font-size: 1.25em;
     padding: 12px 24px;
   }
 
@@ -181,6 +255,10 @@ h6,
 .row {
   display: flex;
   justify-content: space-between;
+
+  @include mq(ipad, 'max-width') {
+    flex-direction: column;
+  }
 }
 
 .col-1-8 {
@@ -231,6 +309,12 @@ h6,
   width: 100%;
 }
 
+.col {
+  @include mq(ipad, 'max-width') {
+    width: 100% !important;
+  }
+}
+
 // Header
 .header {
   background: $color-primary;
@@ -268,7 +352,14 @@ h6,
 
 // Footer {
 .footer {
-  padding: 80px 0;
+  padding: 25px 0;
+  background: $color-primary;
+  color: white;
+
+  &__copyright {
+    font-weight: 700;
+    font-size: .85em;
+  }
 }
 
 // Hero 
@@ -279,6 +370,10 @@ h6,
   background-size: cover;
   padding: 120px 0 150px;
   width: 100%;
+
+  @include mq(ipad, 'max-width') {
+    padding: 80px 0;
+  }
 
   &:after {
     top: 0;
@@ -323,6 +418,14 @@ h6,
     height: 160px;
     margin: 0 auto 40px;
   }   
+
+  @include mq(ipad, 'max-width') {
+    margin-bottom: 80px;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 // Problem 
@@ -330,6 +433,14 @@ h6,
   background: $color-purple;
   color: white;
   padding: 90px 0;
+
+  @include mq(ipad, 'max-width') {
+    padding: 60px 0 70px;
+  }
+
+  .btn--problem {
+    margin-top: 10px;
+  }
 }
 
 .problem-block-small-wrapper {
@@ -343,5 +454,98 @@ h6,
   h5 {
     margin-bottom: 10px;
   }
+
+  @include mq(desktop, 'max-width') {
+    padding-left: 30px;
+  }
+
+  @include mq(ipad, 'max-width') {
+    padding-left: 0;
+    margin-top: 60px;
+  }
 }
 
+// Contact 
+.contact {
+  position: relative;
+  padding: 90px 0 170px;
+
+  @include mq(ipad, 'max-width') {
+    padding: 70px 0 130px;
+  }
+
+   &::after {
+    content: "";
+    background: url('../images/contact.svg');
+    background-repeat: no-repeat;
+    background-position: 40% 200px;
+    opacity: .2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+
+    @include mq(ipad, 'max-width') {
+      background-size: cover;
+    }  
+  }
+
+  .msg-alert {
+    margin-top: 10px;
+    font-weight: 700;
+  }
+}
+
+.contact-form {
+  width: 620px;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="textarea"] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1.1em;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid $color-mid-blue;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color-dark-blue;
+    }
+  }
+
+  button[type="submit"] {
+    background: $color-mid-blue;
+    color: white;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-weight: 100;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 15px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: center;
+    width: 120px;
+    margin: 10px auto 0;
+    transition: all .2s ease;
+
+    &:hover {
+      background: darken($color-mid-blue, 20%);
+    }
+  }
+}

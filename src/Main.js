@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from './components/Hero.js'
 import Values from './components/Values.js'
 import Problem from './components/Problem.js'
-import ContactForm from './components/ContactForm.js'
+import ContactSection from './components/ContactSection.js'
 
 function Main() {
   return (
@@ -10,7 +10,7 @@ function Main() {
       <Hero />
       <Values />
       <Problem />
-      <ContactForm />
+      <ContactSection />
     </main>
   )
 }
