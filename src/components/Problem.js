@@ -1,5 +1,6 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Problem() {
   return (
@@ -11,7 +12,7 @@ function Problem() {
               <h1>Tired of slow WiFi speeds?</h1>  
               <p>Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things.</p> 
               <p>Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things. Paragraph here about something and more stuff and more stuff and things.</p> 
-              <a className="btn btn--secondary btn--large btn--problem" href="/">Get Started</a>
+              <AnchorLink className="btn btn--secondary btn--large btn--problem" href="#contact">Get Started</AnchorLink>
             </div>
           </div>
           <div className="col col-2-5">

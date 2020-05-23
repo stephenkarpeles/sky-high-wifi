@@ -1,5 +1,5 @@
-import React from 'react';
-import './css/App.css';
+import React from 'react'
+import './css/App.css'
 
 import Header from './Header.js'
 import Main from './Main.js'

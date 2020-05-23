@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from './images/logo.svg'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
         <div className="header__menu">
           <nav>
             <ul>
-              <li><a className="btn btn--header btn--medium" href="/">Get Started</a></li>
+              <li><AnchorLink className="btn btn--header btn--medium" href="#contact">Get Started</AnchorLink></li>
             </ul>
           </nav>
         </div>
