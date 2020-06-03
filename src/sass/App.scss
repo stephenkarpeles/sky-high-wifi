@@ -244,6 +244,10 @@ h6,
     &:hover {
       opacity: .7;
     }
+
+    @include mq(mobile-landscape, 'max-width') {
+      font-size: .95em;
+    }
   }
 }
 
@@ -328,12 +332,46 @@ h6,
 
   &__logo {
     width: 170px;
+
+    @include mq(tablet, 'max-width') {
+      width: 155px;
+    }
+
+    @include mq(mobile-landscape, 'max-width') {
+      width: 145px;
+    }
+  }
+
+  &__right-content {
+    display: flex; 
+
+    @include mq(tablet, 'max-width') {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__location-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: .9em;
+    font-style: italic;
+    font-weight: 400;
+
+    @include mq(tablet, 'max-width') {
+      font-size: .8em;
+    }
+
+    @include mq(mobile-landscape, 'max-width') {
+      font-size: .75em;
+    }
   }
 
   &__menu {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-left: 25px;
 
     ul {
       margin: 0;
@@ -342,6 +380,12 @@ h6,
 
     li {
       list-style-type: none;
+    }
+
+    @include mq(tablet, 'max-width') {
+      margin-left: 0;
+      margin-bottom: 8px;
+      text-align: center;
     }
   }
 }
@@ -385,11 +429,12 @@ h6,
   }
 
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   p {
     font-size: $h5-size;
+    line-height: 1.45;
   }
 
   .container {
@@ -398,8 +443,16 @@ h6,
     color: white;
   }
 
+  &__content {
+    max-width: 560px;
+
+    @include mq(ipad, 'max-width') {
+      max-width: 520px;
+    }
+  }
+
   &__cta-block {
-    margin-top: 30px;
+    margin-top: 32px;
   }
 }
 
@@ -430,18 +483,30 @@ h6,
   background: $color-purple;
   color: white;
   padding: 90px 0;
+  position: relative;
+  z-index: 100;
 
   @include mq(ipad, 'max-width') {
     padding: 60px 0 70px;
   }
 
   .btn--problem {
-    margin-top: 10px;
+    margin-top: 12px;
+  }
+}
+
+.problem-block-large-wrapper {
+  p {
+    font-size: 1.15em;
   }
 }
 
 .problem-block-small-wrapper {
   margin-top: 15px;
+
+  p {
+    font-size: 1.025em;
+  }
 }
 
 .problem-block-small {
@@ -544,6 +609,26 @@ h6,
 
     &:hover {
       background: darken($color-mid-blue, 20%);
+    }
+  }
+}
+
+// About 
+.about {
+  background: $color-mid-blue;
+  color: white;
+}
+
+.about-content {
+  text-align: center;
+
+  &__img {
+    display: inline-block;
+
+    img {
+      width: 150px;
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
 }

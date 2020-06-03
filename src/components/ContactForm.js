@@ -14,19 +14,19 @@ function ContactForm() {
           required: true
         },
         {
-          name: 'FNAME',
+          name: 'MMERGE1',
           placeholder: 'First Name',
           type: 'text',
           required: false
         },
         {
-          name: 'LNAME',
+          name: 'MMERGE2',
           placeholder: 'Last Name',
           type: 'text',
           required: false
         },
         {
-          name: 'HELP',
+          name: 'MMERGE3',
           placeholder: 'How can we help you?',
           type: 'textarea',
           required: false

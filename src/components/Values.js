@@ -35,7 +35,7 @@ function Values() {
                 </div>
                 <div className="value-block__text">
                   <h4>Your personal shopper</h4>
-                  <p>We'll shop for you and filter through all the technical jargon to find the products that fit your home’s exact WiFi needs.</p>
+                  <p>We'll shop for you and filter through all the technical jargon to find the products that fit your property’s exact WiFi needs.</p>
                 </div>
               </div>
             </div>

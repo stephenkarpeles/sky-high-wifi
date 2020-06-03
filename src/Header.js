@@ -9,12 +9,17 @@ function Header() {
         <div className="header__logo">
           <img src={Logo}/>
         </div>
-        <div className="header__menu">
-          <nav>
-            <ul>
-              <li><AnchorLink className="btn btn--header btn--medium" href="#contact">Get Started</AnchorLink></li>
-            </ul>
-          </nav>
+        <div className="header__right-content">
+          <div className="header__location-text">
+            <span>Proudly Serving Chicagoland</span>
+          </div>
+          <div className="header__menu">
+            <nav>
+              <ul>
+                <li><AnchorLink className="btn btn--header btn--medium" href="#contact">Get Started</AnchorLink></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
